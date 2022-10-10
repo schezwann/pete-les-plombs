@@ -18,7 +18,7 @@
 		$HOST_DB=$HOSTT[$arrHOST];
 		
 	// paramétres de connexion
-	$USER_DB="";
+	$USER_DB="dev";
 	$PASS_DB="";
 	$DATABASE="db_pete-les-plombs";
 	
