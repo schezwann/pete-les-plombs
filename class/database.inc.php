@@ -2,7 +2,7 @@
 	// ********************************************
 	// Script de connexion WEB
 	// ********************************************
-	include_once("$PATH/class/mysql.class.inc.php");
+	include_once($PATH."/class/mysql.class.inc.php");
 	
 	// Si on utilise la variable $HOST, ca pose problème avec la recherche de dispo et la checkbox pour le .host (ce qui génère un $_POST["HOST"]
 	
@@ -18,7 +18,7 @@
 		$HOST_DB=$HOSTT[$arrHOST];
 		
 	// paramétres de connexion
-	$USER_DB="";
+	$USER_DB="dev";
 	$PASS_DB="";
 	$DATABASE="db_pete-les-plombs";
 	
