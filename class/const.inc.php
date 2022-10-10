@@ -1,5 +1,7 @@
 <?php
 	
-	$APP_MODE="DEV";
+	$APP_MODE = "DEV";
+
+    $DB_MAIL = "";
 
 ?>

@@ -3,14 +3,15 @@
 	{
 		var $_link;
 		var $_Connected;
-		var $_Host;
+		var $_HostArray;
 		var $_User;
 		var $_Pass;
 		var $_Database;
 		var $_Source;
 		var $_Sql;
 		var $_err;
-		var $_start;
+		var $_Start;
+        var $_Result;
 		var $_microStart;
 		var $_microEnd;
 		var $_iSrv;
@@ -64,7 +65,7 @@
 		
 		function Query($sql,$source="")
 		{ 
-			global $LOG_DB_REQUESTS, $APP_MODE, $NOTRE_ID;
+			global $LOG_DB_REQUESTS, $APP_MODE, $NOTRE_ID, $DB_MAIL;
 			
 			if(preg_match("#information_schema\.#",$sql)
 				||preg_match("#INFORMATION_SCHEMA\.#",$sql)
@@ -305,14 +306,14 @@
 		
 		function Close()
 		{
-			if($this->_Connect)
+			if( $this->IsConnected() )
 				mysqli_close($this->_link);
-			$this->_Connected="";
+			$this->_Connected = '';
 		}
 		
 		function LogError()
 		{
-			global $APP_MODE,$NOTRE_ID;
+			global $APP_MODE,$NOTRE_ID,$DB_MAIL;
 			
 			$this->GetLastError();
 			
