@@ -1,7 +1,7 @@
 <?php
     include_once($PATH . '/class/mysql.class.inc.php');
 
-	class Event
+	class slide
 	{
         private int $_id;
 
